@@ -3,11 +3,15 @@
 namespace Hotrush\SpatieBackup\Notifications\Notifications;
 
 use Spatie\Backup\Notifications\Notifications\BackupWasSuccessful as BaseNotification;
-use NotificationChannels\Telegram\TelegramMessage\ToTelegramTrait;
+use Hotrush\SpatieBackup\Notifications\ToTelegramTrait;
 
 class BackupWasSuccessful extends BaseNotification
 {
    
     use ToTelegramTrait;
+
+    // set these required values
+    protected $viewStatus = 'successful';
+    protected $messageTemplate = 'backup_successful_body';
 
 }
