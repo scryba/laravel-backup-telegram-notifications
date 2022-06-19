@@ -39,8 +39,43 @@ trait ToTelegramTrait
         
         if (in_array('exception', $this->defineMessageRequirements))
         {
-            $a = (!is_null($this->event->exception)) ? $this->event->exception : ((!is_null($this->failure()->exception())) ? $this->failure()->exception() : "");
-            return $a->getMessage();
+            if(!is_null($this->event->exception))
+            {
+                return $this->event->exception;
+            }
+            else
+            {
+                return $this->failure()->exception();
+            }
+
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    public function generalExceptionMessage()
+    {
+        
+        if (in_array('exception', $this->defineMessageRequirements))
+        {
+            $exceptionInstance = $this->generalException();
+            return $exceptionInstance->getMessage();
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    public function generalExceptionTrace()
+    {
+        
+        if (in_array('exception', $this->defineMessageRequirements))
+        {
+            $exceptionInstance = $this->generalException();
+            return $exceptionInstance->getTraceAsString();
         }
         else
         {
@@ -70,7 +105,8 @@ trait ToTelegramTrait
                     'application_name' => $this->applicationName(),
                     'disk_name' => $this->diskNameTelegram(),
                 ]),
-                'exception' => $this->generalException(),
+                'exception' => $this->generalExceptionMessage(),
+                'exceptionTrace' => $this->generalExceptionTrace(),
                 'description' => $this->problemDescriptionTelegram(),
                 'properties' => $this->backupDestinationProperties(),
             ])
