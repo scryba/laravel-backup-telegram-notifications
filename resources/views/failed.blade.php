@@ -3,9 +3,8 @@
 <strong>{{ trans('backup::notifications.exception_message_title') }}:</strong>
 {{ $exception }}
 
-@if(isset($exceptionTrace))
-    <i>{{ $exceptionTrace }}</i>
-@endif
+<strong>{{ trans('backup::notifications.exception_message_trace') }}:</strong>
+{{ $exceptionTrace }}
 
 @if(isset($description))
     <i>{{ $description }}</i>

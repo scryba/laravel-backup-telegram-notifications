@@ -6,6 +6,12 @@
         {
             "name": "hotrush",
             "email": "johny64@gmail.com"
+        },
+        {
+            "name": "Michael K. Laweh",
+            "email": "contact@michael.laweitech.com",
+            "homepage": "https://michael.laweitech.com/",
+            "role": "Developer"
         }
     ],
     "require": {
