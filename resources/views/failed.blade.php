@@ -1,7 +1,7 @@
 <strong>{{ $message }}</strong>
 
 <strong>{{ trans('backup::notifications.exception_message_title') }}:</strong>
-{{ $exception->getMessage() }}
+{{ $exception }}
 
 @if(isset($description))
     <i>{{ $description }}</i>

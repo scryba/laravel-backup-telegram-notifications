@@ -14,4 +14,8 @@ class CleanupHasFailedNotification extends BaseNotification
     protected $viewStatus = 'failed';
     protected $messageTemplate = 'cleanup_failed_subject';
 
+    protected $defineMessageRequirements = [
+        'exception',
+    ];
+
 }

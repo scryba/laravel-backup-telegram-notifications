@@ -14,4 +14,8 @@ class HealthyBackupWasFound extends BaseNotification
     protected $viewStatus = 'successful';
     protected $messageTemplate = 'healthy_backup_found_subject';
 
+    protected $defineMessageRequirements = [
+        'disk_name',
+    ];
+
 }

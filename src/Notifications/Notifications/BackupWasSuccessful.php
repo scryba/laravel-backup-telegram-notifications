@@ -14,4 +14,8 @@ class BackupWasSuccessful extends BaseNotification
     protected $viewStatus = 'successful';
     protected $messageTemplate = 'backup_successful_body';
 
+    protected $defineMessageRequirements = [
+        'disk_name',
+    ];
+
 }

@@ -14,4 +14,8 @@ class BackupHasFailed extends BaseNotification
     protected $viewStatus = 'failed';
     protected $messageTemplate = 'backup_failed_subject';
 
+    protected $defineMessageRequirements = [
+        'exception',
+    ];
+    
 }

@@ -14,4 +14,9 @@ class UnhealthyBackupWasFoundNotification extends BaseNotification
     protected $viewStatus = 'failed';
     protected $messageTemplate = 'unhealthy_backup_found_subject';
 
+    protected $defineMessageRequirements = [
+        'exception',
+        'description',
+    ];
+
 }

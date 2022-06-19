@@ -14,4 +14,8 @@ class CleanupWasSuccessfulNotification extends BaseNotification
     protected $viewStatus = 'successful';
     protected $messageTemplate = 'cleanup_successful_body';
 
+    protected $defineMessageRequirements = [
+        'disk_name',
+    ];
+
 }
